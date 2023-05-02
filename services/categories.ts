@@ -1,12 +1,12 @@
-import { GetCategoryResponse } from "@/models/category";
+import { CategoryProps, GetCategoryResponse } from "@/models/category";
 import { request, gql } from "graphql-request"
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
-export const getCategories = async () => {
+export const getCategories = async (): Promise<CategoryProps[]> => {
     const query = gql`
         query GetCategories {
-            categories: {
+            categories {
                 name
                 slug
             }
