@@ -1,4 +1,4 @@
-import { PostCard, PostWidget, Categories } from '@/components'
+import { PostCard, PostWidget, Categories } from '@/components';
 import { getPosts } from '../services/posts';
 import { PostProps } from '@/models/post';
 

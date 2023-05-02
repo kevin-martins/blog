@@ -1,13 +1,14 @@
 import { request, gql } from 'graphql-request';
 import {
     GetPostsResponse,
+    PostResponse,
     RelatedPostProps,
     RelatedPostsResponse
 } from '@/models/post';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
-export const getPosts = async () => {
+export const getPosts = async (): Promise<PostResponse> => {
     const query = gql`
         query Assets {
             assets {
@@ -71,7 +72,10 @@ export const getRecentPosts = async (): Promise<RelatedPostProps[]> => {
     return result.posts;
 }
 
-export const getSimilarPosts = async (categories?: string[], slug?: string) => {
+export const getSimilarPosts = async (
+    categories?: string[],
+    slug?: string
+): Promise<RelatedPostProps[]> => {
     const query = gql`
         query GetPostDetails($slug: String!, $categories: String[]!) {
             posts(

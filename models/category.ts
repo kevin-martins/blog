@@ -1,4 +1,4 @@
-export type GetCategoryResponse = {
+export type CategoryResponse = {
     categories: CategoryProps[]
 }
 
