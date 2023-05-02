@@ -1,9 +1,9 @@
 import { PostCard, PostWidget, Categories } from '@/components'
 import { getPosts } from '../services/posts';
-import { GetPostProps } from '@/models/post';
+import { PostProps } from '@/models/post';
 
 type Props = {
-  posts: Array<{ node: GetPostProps }>
+  posts: Array<{ node: PostProps }>
 }
 
 export default function Home({ posts }: Props) {

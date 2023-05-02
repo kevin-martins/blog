@@ -1,8 +1,8 @@
 import { request, gql } from 'graphql-request';
 import {
     GetPostsResponse,
-    GetRelatedPostProps,
-    GetRelatedPostsResponse
+    RelatedPostProps,
+    RelatedPostsResponse
 } from '@/models/post';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
@@ -50,7 +50,7 @@ export const getPosts = async () => {
     return result.postsConnection.edges;
 }
 
-export const getRecentPosts = async (): Promise<GetRelatedPostProps[]> => {
+export const getRecentPosts = async (): Promise<RelatedPostProps[]> => {
     const query = gql`
         query GetPostDetails() {
             posts(
@@ -66,7 +66,7 @@ export const getRecentPosts = async (): Promise<GetRelatedPostProps[]> => {
             }
         }
     `
-    const result: GetRelatedPostsResponse = await request(graphqlAPI!, query);
+    const result: RelatedPostsResponse = await request(graphqlAPI!, query);
 
     return result.posts;
 }
@@ -93,7 +93,7 @@ export const getSimilarPosts = async (categories?: string[], slug?: string) => {
             }
         }
     `
-    const result: GetRelatedPostsResponse = await request(graphqlAPI!, query);
+    const result: RelatedPostsResponse = await request(graphqlAPI!, query);
 
     return result.posts;
 }

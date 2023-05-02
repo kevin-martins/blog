@@ -8,10 +8,10 @@ export type GetPostsResponse = {
 }
 
 export type PostResponse = {
-    node: GetPostProps
+    node: PostProps
 }
 
-export type GetPostProps = {
+export type PostProps = {
     author: AuthorProps,
     createdAt: Date,
     slug: string,
@@ -23,11 +23,11 @@ export type GetPostProps = {
     categories: CategoryProps
 }
 
-export type GetRelatedPostsResponse = {
-    posts: GetRelatedPostProps[]
+export type RelatedPostsResponse = {
+    posts: RelatedPostProps[]
 }
 
-export type GetRelatedPostProps = {
+export type RelatedPostProps = {
     title: string,
     featuredImage: {
         url: string
