@@ -1,9 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 import Link from 'next/link';
-import { PostProps } from '@/models/post';
+import { GetPostProps } from '@/models/post';
 
-const PostCard = (post: PostProps) => {
+const PostCard = (post: GetPostProps) => {
   return (
     <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
       <div className="relative overlow-hidden shadow-md pb-80 mb-6">

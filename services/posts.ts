@@ -1,5 +1,9 @@
-import { GetPostsResponse, GetRelatedPostProps, GetRelatedPostsResponse } from '@/models/post';
 import { request, gql } from 'graphql-request';
+import {
+    GetPostsResponse,
+    GetRelatedPostProps,
+    GetRelatedPostsResponse
+} from '@/models/post';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 

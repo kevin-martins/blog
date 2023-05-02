@@ -1,11 +1,17 @@
 import { AuthorProps } from "./author"
 import { CategoryProps } from "./category"
 
-export type PostResponse = {
-    node: PostProps
+export type GetPostsResponse = {
+    postsConnection: {
+        edges: PostResponse
+    }
 }
 
-export type PostProps = {
+export type PostResponse = {
+    node: GetPostProps
+}
+
+export type GetPostProps = {
     author: AuthorProps,
     createdAt: Date,
     slug: string,
@@ -15,4 +21,17 @@ export type PostProps = {
         url: string,
     }
     categories: CategoryProps
+}
+
+export type GetRelatedPostsResponse = {
+    posts: GetRelatedPostProps[]
+}
+
+export type GetRelatedPostProps = {
+    title: string,
+    featuredImage: {
+        url: string
+    },
+    createdAt: Date,
+    slug: string
 }

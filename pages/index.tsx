@@ -1,15 +1,12 @@
 import { PostCard, PostWidget, Categories } from '@/components'
-import { getPosts } from '../services';
-import { PostProps, PostResponse } from '@/models/post';
+import { getPosts } from '../services/posts';
+import { GetPostProps } from '@/models/post';
 
 type Props = {
-  posts: {
-    node: PostProps
-  }[]
+  posts: Array<{ node: GetPostProps }>
 }
 
 export default function Home({ posts }: Props) {
-  console.log(posts[0].node)
   return (
     <main>
       <div className="container mx-auto px-10 mb-8">
