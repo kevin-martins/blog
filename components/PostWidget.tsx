@@ -5,8 +5,8 @@ import { getRecentPosts, getSimilarPosts } from '@/services/posts';
 import { RelatedPostProps } from '@/models/post';
 
 type Props = {
-  categories?: string[],
-  slug?: string
+  categories: string[],
+  slug: string
 }
 
 const PostWidget = ({ categories, slug }: Props) => {
